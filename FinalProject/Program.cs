@@ -391,6 +391,55 @@ namespace FinalProject
 
                                                         }
                                                         break;
+
+                                                    case 4://Get info on previous order
+                                                        while (true)
+                                                        {
+                                                            Console.WriteLine("Please specify which report you need:\n1. Generate a report on a specific member\n2. Generate a general report\n3. Complete a search");
+                                                            int infoType = Convert.ToInt32(Console.ReadLine());
+                                                            switch (infoType)
+                                                            {
+                                                                case 1:
+                                                                    Console.WriteLine("Please enter which information you'd like to get:\n1. Get information on an order\n2. Get all orders\n3. Get non-returned orders");
+                                                                    int reportType = Convert.ToInt32(Console.ReadLine());
+                                                                    switch (reportType)
+                                                                    {
+                                                                        case 1://Get all books in order
+                                                                            Console.WriteLine("Enter the OrderID you are inquiring about: ");
+                                                                            int orderID = Convert.ToInt32(Console.ReadLine());
+                                                                            Orders order = new Orders();
+                                                                            order.GetBooksInOrder(orderID);
+                                                                            break;
+                                                                        case 2://Get all orders
+                                                                            Console.WriteLine("Please enter the member's username: ");
+                                                                            string membersUsername = Console.ReadLine();
+                                                                            Orders order2 = new Orders();
+                                                                            order2.GetMemberOrders(membersUsername);
+                                                                            break;
+                                                                        case 3://Get non-returned orders
+                                                                            Console.WriteLine("Please enter the member's username: ");
+                                                                            string membersUsername1 = Console.ReadLine();
+                                                                            Orders order3 = new Orders();
+                                                                            order3.GetNonReturnedOrders(membersUsername1);
+                                                                            break;
+                                                                    }
+                                                                    break;
+                                                                case 2:
+                                                                    Console.WriteLine("Please enter which information you'd like to get:\n1. Get all orders\n2.  Get all members\n3. Get all books\n4. Get all authors");
+                                                                    int infotype = Convert.ToInt32(Console.ReadLine());
+                                                                    switch (infotype)
+                                                                    {
+                                                                       
+
+                                                                    }
+                                                                    break;
+                                                                case 3:
+                                                                    Console.WriteLine("Please enter the category you'd like to search:\n1. Search for a member by phone number\n2. Search for a member by name\n3. Search for books by title\n4. Search for books by authors\n5. Search for books by genre");
+                                                                    int type = Convert.ToInt32(Console.ReadLine());
+                                                                    break;
+
+                                                            }
+                                                        }
                                                     case 5://Add member
                                                         while (true)
                                                         {
